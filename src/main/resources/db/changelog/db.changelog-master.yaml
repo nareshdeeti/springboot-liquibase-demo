@@ -1,30 +1,3 @@
 databaseChangeLog:
-  
-  - changeSet:
-      id: cs1
-      author: Naresh Deeti
-      changes:
-        - addColumn:
-            tableName: user
-            columns:
-              - column:
-                  name: mobile
-                  type: long
-        - update:
-            ccatalogName: liquibase
-            columns:
-              - column:
-                  name: gender
-                  value: male
-                  type: varchar(15)
-            tableName: user
-            where: user_id='1'
-        - update:
-            tableName: user
-            columns:
-              - column:
-                  name: mobile
-                  value: '758648954'
-                  type: long
-            where: user_id=1
-                 
+  - includeAll:
+      path: "db/changelog/sql/"

@@ -1,13 +1,17 @@
 spring:
   datasource:
-    url: url
-    username: username
-    password: pass
+    url: jdbc:postgresql://localhost/dev
+    username: dev
+    password: dev
+    schema: liquibasedb
 
-  jpa:
-    show-sql: true
-    hibernate:
-      format_sql: true
+  output:
+    ansi:
+      enabled: ALWAYS
+
+  logging:
+    level:
+      org.hibernate.SQL: DEBUG
 
   liquibase:
     change-log: classpath:db\changelog\db.changelog-master.yaml
